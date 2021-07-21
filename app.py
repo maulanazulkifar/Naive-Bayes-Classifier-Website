@@ -33,7 +33,7 @@ data["hasil"] = ""
 # model Naive Bayes
 df = pd.read_csv("data.csv")
 # Variabel independen
-x = df.drop(['Pelamar','Diterima'], axis = 1)
+x = df.drop(['Diterima'], axis = 1)
 # Variabel dependen
 y = df['Diterima']
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.4, random_state = 12)
