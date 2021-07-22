@@ -2,7 +2,6 @@
 from flask import Flask, request
 import flask
 from flask_restful import Resource, Api
-from werkzeug.wrappers import Response
 from flask_cors import CORS
 
 import csv
@@ -72,9 +71,13 @@ class ContohResource(Resource):
         test = pd.read_csv("test.csv")
 
         y_pred = nbtrain.predict(test)
-        data["hasil"] = y_pred.to_json()
+        hasil = y_pred.tolist()
 
-        return data
+        if hasil[0] == 1:
+            response = {"msg":"Calon Pegawai Dapat Diterima"}
+        else:
+            response = {"msg":"Calon Pegawai Tidak Dapat Diterima"}
+        return response
 
 
 # setup resource
