@@ -74,11 +74,18 @@ class ContohResource(Resource):
         hasil = y_pred.tolist()
 
         if hasil[0] == 1:
-            response = {"msg":"Calon Pegawai Dapat Diterima"}
+            response = {
+                "nama":nama,
+                "msg":"Diterima",
+                "status":"true"
+                }
         else:
-            response = {"msg":"Calon Pegawai Tidak Dapat Diterima"}
+            response = {
+                "nama":nama,
+                "msg":"Tidak Diterima",
+                "status":"false"
+                }
         return response
-
 
 # setup resource
 api.add_resource(ContohResource, "/api", methods=["GET", "POST"])
