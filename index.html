@@ -9,41 +9,45 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="App.css">
     <title>Tektok</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="col">
-            <div class="row mt-5">
+    <div class="container d-flex w-100 h-100 justify-content-center align-items-center">
+        <div class="col-5 justify-content-center">
+            <div class="row mt-5 self-center">
+                <h1 class="text-center text-judul">TECH TALK</h1>
                 <form action="http://127.0.0.1:5005/api" method="POST">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="name@example.com">
-                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" class="form-control text-des" name="nama" id="nama"
+                            placeholder="name@example.com">
+                        <label class="text-des" for="nama">Nama Lengkap</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="nilai_admin" id="nilai_admin"
+                        <input type="text" class="form-control text-des" name="nilai_admin" id="nilai_admin"
                             placeholder="name@example.com">
-                        <label for="nilai_admin">Nilai Administrasi</label>
+                        <label class="text-des" for="nilai_admin">Nilai Administrasi</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="test_1" id="test_1"
+                        <input type="text" class="form-control text-des" name="test_1" id="test_1"
                             placeholder="name@example.com">
-                        <label for="test_1">Test 1</label>
+                        <label class="text-des" for="test_1">Test 1</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="test_2" id="test_2"
+                        <input type="text" class="form-control text-des" name="test_2" id="test_2"
                             placeholder="name@example.com">
-                        <label for="test_2">Test 2</label>
+                        <label class="text-des" for="test_2">Test 2</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="interview" id="interview"
+                        <input type="text" class="form-control text-des" name="interview" id="interview"
                             placeholder="name@example.com">
-                        <label for="interview">Interview</label>
+                        <label class="text-des" for="interview">Interview</label>
                     </div>
-                    <button class="btn btn-primary" id="submit">Submit</button>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-gradient-1 btn-lg text-des" id="submit">SUBMIT</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -58,29 +62,29 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
 
-        // $('#submit').on('click', function (e) {
-        //     e.preventDefault();
-        //     console.log(
-        //         $('#nama').val(),
-        //         $('#nilai_admin').val(),
-        //         $('#test_1').val(),
-        //         $('#test_2').val(),
-        //         $('#interview').val()
-        //     );
-        //     axios.post('http://127.0.0.1:5005/api', {
-        //         nama: $('#nama').val(),
-        //         nilai_admin: $('#nilai_admin').val(),
-        //         test_1: $('#test_1').val(),
-        //         test_2: $('#test_2').val(),
-        //         interview: $('#interview').val()
-        //     })
-        //         .then(function (response) {
-        //             console.log(response);
-        //         })
-        //         .catch(function (error) {
-        //             console.log(error);
-        //         });
-        // });
+        $('#submit').on('click', function (e) {
+            e.preventDefault();
+            console.log(
+                $('#nama').val(),
+                $('#nilai_admin').val(),
+                $('#test_1').val(),
+                $('#test_2').val(),
+                $('#interview').val()
+            );
+            axios.post('http://127.0.0.1:5005/api', {
+                nama: $('#nama').val(),
+                nilai_admin: $('#nilai_admin').val(),
+                test_1: $('#test_1').val(),
+                test_2: $('#test_2').val(),
+                interview: $('#interview').val()
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
 
     </script>
 </body>
